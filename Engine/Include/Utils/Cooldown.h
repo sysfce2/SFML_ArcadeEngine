@@ -11,7 +11,7 @@ private:
     float duration_;
 
 public:
-    Cooldown(float duration = 0.f);
+    Cooldown(float duration = 0);
 
     void Start();
     void Stop();

@@ -23,6 +23,8 @@ public:
     void SetVisible(bool visible);
     bool IsVisible() const;
 
+    void SetGrabbed(bool grabbed);
+
     void SetPosition(sf::Vector2f position);
     sf::Vector2f GetPosition() const;
     sf::Vector2f GetPosition(const sf::View& view) const;

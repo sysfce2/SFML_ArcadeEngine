@@ -45,15 +45,6 @@ void Game::InitBall()
     ball.shape.setOrigin(ball.shape.getGeometricCenter());
 }
 
-void Game::BindInputs()
-{
-    ctx.input.Bind(Player1MoveUp,   Input::Keyboard{sf::Keyboard::Scan::W});
-    ctx.input.Bind(Player1MoveDown, Input::Keyboard{sf::Keyboard::Scan::S});
-
-    ctx.input.Bind(Player2MoveUp,   Input::Keyboard{sf::Keyboard::Scan::Up});
-    ctx.input.Bind(Player2MoveDown, Input::Keyboard{sf::Keyboard::Scan::Down});
-}
-
 void Game::Start()
 {
     ctx.cursor.SetVisible(false);
@@ -64,6 +55,15 @@ void Game::Start()
     StartPlayerRight(player2);
 
     EventBallReset();
+}
+
+void Game::BindInputs()
+{
+    ctx.input.Bind(Player1MoveUp,   Input::Keyboard{sf::Keyboard::Scan::W});
+    ctx.input.Bind(Player1MoveDown, Input::Keyboard{sf::Keyboard::Scan::S});
+
+    ctx.input.Bind(Player2MoveUp,   Input::Keyboard{sf::Keyboard::Scan::Up});
+    ctx.input.Bind(Player2MoveDown, Input::Keyboard{sf::Keyboard::Scan::Down});
 }
 
 void Game::StartPlayerLeft(Player& player)

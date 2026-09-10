@@ -131,7 +131,7 @@ void Game::StartBunkers()
 }
 
 void Game::StartBunker(Bunker& bunker, int i)
-{    
+{
     sf::Vector2f partSize = BUNKER_SIZE.componentWiseDiv(sf::Vector2f(BUNKER_PART_COUNT));
 
     float totalWidth = BUNKER_COUNT * BUNKER_SIZE.x + (BUNKER_COUNT - 1) * BUNKER_SPACING_X;

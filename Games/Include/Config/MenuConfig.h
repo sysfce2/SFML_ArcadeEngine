@@ -7,11 +7,11 @@
 namespace Menu
 {
     const std::array BUTTONS_NAMES =
-    { 
+    {
         "Clicker",     "Memory Card",    "Tic Tac Toe",  "Mine Sweeper",
         "Runner",      "Tetris",         "Pong",         "Breakout",
         "Flappy Bird", "Space Invaders", "Puzzle",       "Snake",
-        "Mine Storm",  "Tower Defense",  "Level Editor", "Adventure"
+        "Mine Storm",  "Tower Defense",  "Level Editor", "Space Fighter"
     };
 
     const int BUTTONS_PER_ROW = 4;
@@ -94,7 +94,8 @@ namespace Menu
             Upgrade: Mouse Left / Gamepad South
             Toggle Preview: P / Gamepad North)",
 
-        R"(Level Editor
+        R"(
+        Level Editor
             Move: A / D / W / S / Axes Z / R
             Select Tile: 0..9 / Numpad +/-
             Save: Ctrl + C / Gamepad L1
@@ -103,14 +104,24 @@ namespace Menu
             Adventure: Q / Gamepad North
             Zoom In: Gamepad R3
             Zoom Out: Gamepad L3
-            Click: Mouse Left / Gamepad South)",
+            Click: Mouse Left / Gamepad South,
 
-        R"(Adventure
+        Adventure
             Move: A / D / Stick X
             Sprint: Left Shift / Gamepad L2
             Jump: W / Gamepad R1
             Climb: W / Gamepad R1
             Shoot: Mouse Left / Gamepad R2
-            Force Field: Mouse Middle / Gamepad R3)"
+            Force Field: Mouse Middle / Gamepad R3)",
+
+        R"(Space Fighter
+            Move: W / S / A / D / Stick Left
+            Look: Mouse / Stick Right
+            Up: Space / Gamepad South
+            Down: Left Ctrl / Gamepad East
+            Roll: Q / E / Gamepad L1 / R1
+            Boost: Left Shift / Gamepad L2
+            Shoot: Mouse Left / Gamepad R2
+            Toggle View: C / Gamepad L3)"
     };
 }

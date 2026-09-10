@@ -1,6 +1,6 @@
 // Copyright (c) 2025 Adel Hales
 
-#include "Graphics/TileMap.h"
+#include "Graphics/2D/TileMap.h"
 
 #include <cmath>
 #include <format>
@@ -88,7 +88,7 @@ bool TileMap::SetTile(sf::Vector2u position, Tile tile)
     const std::size_t index = position.x + position.y * mapSize_.x;
     tiles_[index] = tile;
 
-    static const sf::Vector2u offsets[] = { {0,0}, {1,0}, {0,1}, {1,0}, {1,1}, {0,1} };
+    static const sf::Vector2u offsets[] = {{0,0}, {1,0}, {0,1}, {1,0}, {1,1}, {0,1}};
 
     const bool isValid = IsTileValid(tile);
     const sf::Vector2u uv = isValid ? sf::Vector2u(tile % gridSize_.x, tile / gridSize_.x) : sf::Vector2u();

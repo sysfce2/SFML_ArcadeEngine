@@ -10,7 +10,7 @@
 
 using Tile = int;
 
-inline constexpr Tile TILE_EMPTY = -1;
+inline const Tile TILE_EMPTY = -1;
 
 class TileMap : public sf::Drawable
 {

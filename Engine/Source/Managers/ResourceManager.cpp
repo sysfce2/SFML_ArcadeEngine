@@ -46,6 +46,34 @@ sf::Font* ResourceManager::FetchFont(const std::string& filename)
     return &fonts_.at(filename);
 }
 
+Model* ResourceManager::FetchModel(const std::string& filename)
+{
+    if (!models_.contains(filename))
+    {
+        if (!ModelLoader::Load(models_[filename], "Content/Models/" + filename))
+        {
+            LOG_ERROR("Failed to load model: {}", filename);
+            return nullptr;
+        }
+    }
+
+    return &models_.at(filename);
+}
+
+Skybox* ResourceManager::FetchSkybox(const std::string& folder)
+{
+    if (!skyboxes_.contains(folder))
+    {
+        if (!SkyboxLoader::Load(skyboxes_[folder], "Content/Skyboxes/" + folder))
+        {
+            LOG_ERROR("Failed to load skybox: {}", folder);
+            return nullptr;
+        }
+    }
+
+    return &skyboxes_.at(folder);
+}
+
 std::optional<sf::Music> ResourceManager::FetchMusic(const std::string& filename) const
 {
     sf::Music music;

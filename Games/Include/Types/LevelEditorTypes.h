@@ -4,7 +4,7 @@
 
 #include "Config/LevelEditorConfig.h"
 
-#include "Graphics/TileMap.h"
+#include "Graphics/2D/TileMap.h"
 
 namespace LevelEditor
 {

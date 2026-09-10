@@ -5,7 +5,6 @@
 #include <SFML/Graphics.hpp>
 
 #include <memory>
-#include <span>
 #include <vector>
 
 #include "Graphics/Effect.h"
@@ -25,7 +24,6 @@ public:
     RenderManager();
 
     void Draw(const sf::Drawable& drawable);
-    void Draw(std::span<sf::Vertex> vertices, sf::PrimitiveType type);
 
     void SetView(const sf::View& view);
     void ResetView();

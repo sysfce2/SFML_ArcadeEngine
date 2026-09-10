@@ -6,7 +6,7 @@
 
 #include <queue>
 
-#include "Graphics/AnimatedShape.h"
+#include "Graphics/2D/AnimatedShape.h"
 
 namespace MineStorm
 {

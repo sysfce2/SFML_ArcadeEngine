@@ -437,17 +437,17 @@ bool Game::IsLose() const
 
 void Game::Render() const
 {
-    for (auto& row : grid.background)
+    for (const auto& row : grid.background)
     {
-        for (auto& cell : row)
+        for (const auto& cell : row)
         {
             ctx.renderer.Draw(cell);
         }
     }
 
-    for (auto& row : grid.cells)
+    for (const auto& row : grid.cells)
     {
-        for (auto& cell : row)
+        for (const auto& cell : row)
         {
             if (cell.value > 0)
             {

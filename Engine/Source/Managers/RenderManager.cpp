@@ -2,8 +2,6 @@
 
 #include "Managers/RenderManager.h"
 
-#include <utility>
-
 #include "Graphics/Effects/EffectBloom.h"
 #include "Graphics/Effects/EffectMonitor.h"
 
@@ -11,7 +9,7 @@
 #include "Utils/Verify.h"
 
 RenderManager::RenderManager() :
-    target_(sf::Vector2u(gConfig.windowSize)),
+    target_(sf::Vector2u(gConfig.windowSize), {24, 8, 4, 3, 3}),
     backgroundTexture_("Content/Textures/Background.png"),
     background_(gConfig.windowSize)
 {
@@ -58,11 +56,6 @@ const sf::Texture& RenderManager::FinishDrawing()
 void RenderManager::Draw(const sf::Drawable& drawable)
 {
     target_.draw(drawable);
-}
-
-void RenderManager::Draw(std::span<sf::Vertex> vertices, sf::PrimitiveType type)
-{
-    target_.draw(vertices.data(), vertices.size(), type);
 }
 
 void RenderManager::SetView(const sf::View& view)

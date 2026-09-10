@@ -227,7 +227,7 @@ void Game::EventPlayerBodyMovement()
         }
     }
 
-    std::erase_if(player.corners, [&](const Corner& corner) { 
+    std::erase_if(player.corners, [&](const Corner& corner) {
         return corner.shape.getPosition() == player.body.back().shape.getPosition();
     });
 }
@@ -359,7 +359,7 @@ void Game::EventBonusSpawn()
         bonus.shape.setPosition({ctx.random.Int(0, MAP_SIZE.x - 1) * size.x + size.x / 2,
                                  ctx.random.Int(0, MAP_SIZE.y - 1) * size.y + size.y / 2});
     } while (Intersects(player.head.shape, bonus.shape) ||
-        std::ranges::any_of(player.body, [&](const Part& part) { 
+        std::ranges::any_of(player.body, [&](const Part& part) {
             return (bool)Intersects(part.shape, bonus.shape); 
         })
     );

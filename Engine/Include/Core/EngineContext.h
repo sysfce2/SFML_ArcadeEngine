@@ -11,6 +11,7 @@
 #include "Managers/InputManager.h"
 #include "Managers/RandomManager.h"
 #include "Managers/RenderManager.h"
+#include "Managers/RenderManager3D.h"
 #include "Managers/ResourceManager.h"
 #include "Managers/SaveManager.h"
 #include "Managers/SceneManager.h"
@@ -31,6 +32,7 @@ struct EngineContext
     CursorManager cursor;
     GuiManager gui;
     SceneManager scenes;
+    RenderManager3D renderer3D;
 
     EngineContext(sf::RenderWindow& window) :
         screenshot(window), cursor(window), gui(window) {}

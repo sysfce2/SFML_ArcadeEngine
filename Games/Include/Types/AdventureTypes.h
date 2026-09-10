@@ -4,7 +4,7 @@
 
 #include "Config/AdventureConfig.h"
 
-#include "Graphics/AnimatedShape.h"
+#include "Graphics/2D/AnimatedShape.h"
 #include "Utils/Flags.h"
 
 namespace Adventure

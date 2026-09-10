@@ -1,0 +1,11 @@
+# Blender 5.0.1 MTL File: 'Spaceship.blend'
+# www.blender.org
+
+newmtl Material.001
+    Ns 16.000006
+    Ka 1.000000 1.000000 1.000000
+    Ks 0.576000 0.576000 0.576000
+    Ni 1.500000
+    d 1.000000
+    illum 2
+    map_Kd Texture_Albedo.jpg

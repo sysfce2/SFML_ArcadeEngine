@@ -416,7 +416,7 @@ void Game::EventTowerPlace(sf::Vector2f position)
 
 void Game::EventTowerShoot(Tower& tower)
 {
-    auto enemyIt = std::ranges::find_if(enemies, [&](const Enemy& enemy) { 
+    auto enemyIt = std::ranges::find_if(enemies, [&](const Enemy& enemy) {
         return (bool)Intersects(tower.area, enemy.shape); 
     });
 

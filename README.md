@@ -1,17 +1,17 @@
 # Arcade Engine
 
 [![C++20](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
-[![Platforms](https://img.shields.io/badge/Platforms-Windows%20%7C%20macOS%20%7C%20Linux-8b5cf6.svg)]()
+![Platforms](https://img.shields.io/badge/Platforms-Windows%20%7C%20macOS%20%7C%20Linux-8b5cf6.svg)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.md)
 
-A modern C++20 game engine designed for fast and efficient 2D game development.
-It leverages powerful open-source libraries to handle graphics, audio, data, logging, UI and enums.
+A simple and fast modern C++20 game engine for 2D and 3D game development.  
+It leverages powerful open-source libraries for graphics, audio, JSON, logging, UI, enums, and math.
 
 ## 🎓 Udemy Course
 
 <p align="center">
   <a href="https://www.udemy.com/course/game-engine/?referralCode=BBF9525CF1E8562F9464" target="_blank">
-    <img src="Content/Screenshots/Banner.png" alt="Build Your Own 2D Game Engine in C++20 with SFML 3" width="800"/>
+    <img src="Content/Screenshots/Banner.png" alt="Build a 2D & 3D Game Engine in C++20 with SFML & OpenGL" width="800"/>
   </a>
 </p>
 
@@ -21,37 +21,39 @@ It leverages powerful open-source libraries to handle graphics, audio, data, log
 
 ## 📦 Dependencies
 
-All dependencies are managed via CMake's FetchContent:
+Third-party libraries are managed via CMake’s FetchContent.
 
 - [SFML 3.0.2](https://github.com/SFML/SFML)
 - [nlohmann/json 3.12.0](https://github.com/nlohmann/json)
-- [spdlog 1.16.0](https://github.com/gabime/spdlog)
-- [TGUI 1.11.0](https://github.com/texus/TGUI)
-- [magic_enum 0.9.7](https://github.com/Neargye/magic_enum)
+- [spdlog 1.17.0](https://github.com/gabime/spdlog)
+- [TGUI 1.13.0](https://github.com/texus/TGUI)
+- [magic_enum 0.9.8](https://github.com/Neargye/magic_enum)
+- [glm 1.0.3](https://github.com/g-truc/glm)
 
 ## 🛠️ Prerequisites
 
-* **C++20** compiler (MSVC, GCC or Clang).
+* **C++20 compiler** (MSVC, GCC or Clang)
 * **CMake 3.28+**
-* **Git** for cloning.
+* **Git** for cloning
 
 ## 📂 Project Structure
 
 ```
 ArcadeEngine/
-├── CMakeLists.txt
+├── Content/
 ├── Engine/
 │   ├── Include/
 │   └── Source/
 ├── Games/
 │   ├── Include/
 │   └── Source/
-└── Content/
+└── Vendor/
 ```
 
-* **Engine**: Core, Graphics, Managers, Scene, Utils.
-* **Games**: Config, Types, Scenes.
-* **Content**: Textures, Sounds, Fonts, Shaders, …
+* **Content**: Textures, Sounds, Fonts, Shaders, Models, …
+* **Engine**: Core, Graphics, Managers, Scene, Utils
+* **Games**: Config, Types, Scenes
+* **Vendor**: glad, tinyobjloader
 
 ## ⚡ Building the Project
 
@@ -71,7 +73,7 @@ Strict compilation flags are enabled by default:
 * **MSVC**: `/W4 /WX`
 * **GCC/Clang**: `-Wall -Wextra -Werror`
 
-## 🎮 Running the Game
+## 🎮 Running the Games
 
 Make sure the `Content` folder is in the same folder from which you run the executable.
 

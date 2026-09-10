@@ -16,6 +16,7 @@
 #include "Puzzle.h"
 #include "Runner.h"
 #include "Snake.h"
+#include "SpaceFighter.h"
 #include "SpaceInvaders.h"
 #include "Tetris.h"
 #include "TicTacToe.h"
@@ -45,6 +46,7 @@ namespace SceneFactory
         scenes.emplace("Tower Defense",  std::make_unique<TowerDefense::Game>(context));
         scenes.emplace("Level Editor",   std::make_unique<LevelEditor::Game>(context));
         scenes.emplace("Adventure",      std::make_unique<Adventure::Game>(context));
+        scenes.emplace("Space Fighter",  std::make_unique<SpaceFighter::Game>(context));
 
         return scenes;
     }

@@ -30,8 +30,8 @@ void CursorManager::Update(float deltaTime)
     if (joystickDirection.length() > gConfig.joystickDeadzone)
     {
         shape_.move(joystickDirection * speed_ * deltaTime);
-        shape_.setPosition({ std::clamp(shape_.getPosition().x, 0.f, gConfig.windowSize.x - 1),
-                             std::clamp(shape_.getPosition().y, 0.f, gConfig.windowSize.y - 1)});
+        shape_.setPosition({std::clamp(shape_.getPosition().x, 0.f, gConfig.windowSize.x - 1),
+                            std::clamp(shape_.getPosition().y, 0.f, gConfig.windowSize.y - 1)});
 
         SetPosition(shape_.getPosition());
     }
@@ -67,6 +67,11 @@ void CursorManager::SetVisible(bool visible)
 bool CursorManager::IsVisible() const
 {
     return visible_;
+}
+
+void CursorManager::SetGrabbed(bool grabbed)
+{
+    window_.setMouseCursorGrabbed(grabbed);
 }
 
 void CursorManager::SetPosition(sf::Vector2f position)

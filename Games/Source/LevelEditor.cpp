@@ -92,7 +92,8 @@ void Game::StartInfos()
      " - / L2 : Decrement Tile \n" + 
      " CTRL C / L1 : Save Map \n" + 
      " CTRL V / R1 : Load Map \n" +
-     " T / West : Toggle Tileset \n";
+     " T / West : Toggle Tileset \n" +
+     " Q / North : Play Adventure \n";
 
     infos.setString(infosText);
 }
@@ -110,7 +111,7 @@ void Game::OnEvent(const sf::Event& event)
 }
 
 void Game::HandleEvent(const sf::Event::TextEntered& text)
-{ 
+{
     if (text.unicode >= '0' && text.unicode <= '9')
     {
         if (!selected.used)
@@ -374,24 +375,22 @@ void Game::RenderGrid() const
 
     for (int x = 0; x <= mapPixelSize.x; x += map.GetTileSize().x)
     {
-        std::array<sf::Vertex, 2> line =
-        {
-            sf::Vertex{{(float)x, 0}, GRID_COLOR},
-            sf::Vertex{{(float)x, (float)mapPixelSize.y}, GRID_COLOR}
-        };
+        sf::VertexArray line(sf::PrimitiveType::Lines, 2);
 
-        ctx.renderer.Draw(line, sf::PrimitiveType::Lines);
+        line[0] = {{(float)x, 0}, GRID_COLOR};
+        line[1] = {{(float)x, (float)mapPixelSize.y}, GRID_COLOR};
+
+        ctx.renderer.Draw(line);
     }
 
     for (int y = 0; y <= mapPixelSize.y; y += map.GetTileSize().y)
     {
-        std::array<sf::Vertex, 2> line =
-        {
-            sf::Vertex{{0, (float)y}, GRID_COLOR},
-            sf::Vertex{{(float)mapPixelSize.x, (float)y}, GRID_COLOR}
-        };
+        sf::VertexArray line(sf::PrimitiveType::Lines, 2);
 
-        ctx.renderer.Draw(line, sf::PrimitiveType::Lines);
+        line[0] = {{0, (float)y}, GRID_COLOR};
+        line[1] = {{(float)mapPixelSize.x, (float)y}, GRID_COLOR};
+
+        ctx.renderer.Draw(line);
     }
 }
 

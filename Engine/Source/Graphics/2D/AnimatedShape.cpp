@@ -1,6 +1,6 @@
 // Copyright (c) 2025 Adel Hales
 
-#include "Graphics/AnimatedShape.h"
+#include "Graphics/2D/AnimatedShape.h"
 
 #include <algorithm>
 

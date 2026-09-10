@@ -6,11 +6,6 @@
 
 namespace Breakout
 {
-    enum Action
-    {
-        MoveLeft, MoveRight
-    };
-
     struct Stats
     {
         int score;

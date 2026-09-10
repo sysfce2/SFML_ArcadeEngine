@@ -151,6 +151,7 @@ void Engine::EventSceneMenuReturn()
     overlay_.SetVisible(false);
     context_.scenes.ChangeScene("Menu");
 
+    context_.cursor.SetGrabbed(false);
     context_.cursor.SetVisible(true);
     context_.cursor.SetSpeed(gConfig.cursorSpeed);
 }
